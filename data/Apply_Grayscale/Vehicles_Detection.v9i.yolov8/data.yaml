@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['Bus', 'Car', 'Motorcycle', 'Pickup', 'Truck']
+
+roboflow:
+  workspace: hana-v8gbl
+  project: vehicles_detection-gvrhr
+  version: 9
+  license: Private
+  url: https://app.roboflow.com/hana-v8gbl/vehicles_detection-gvrhr/9
