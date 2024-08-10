@@ -6,7 +6,7 @@ This project implements a vehicle detection model using the Faster R-CNN archite
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Model Architecture](#model-architecture)
-- [Setup and Requirements](#setup-and-requirements)
+- [Setup](#setup)
 - [Training](#training)
 - [Evaluation](#evaluation)
 - [Results](#results)
@@ -24,10 +24,10 @@ The dataset used in this project contains images of vehicles with corresponding 
 - **COCO Annotations**: JSON files containing bounding boxes and class labels.
 
 ### Dataset Paths
-- **Train Images**: `/content/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/train`
-- **Train Annotations**: `/content/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/train/_annotations.coco.json`
-- **Test Images**: `/content/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test`
-- **Test Annotations**: `/content/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test/_annotations.coco.json`
+- **Train Images**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/train`
+- **Train Annotations**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/train/_annotations.coco.json`
+- **Test Images**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test`
+- **Test Annotations**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test/_annotations.coco.json`
 
 ## Model Architecture
 The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
@@ -37,20 +37,13 @@ The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
 
 The model includes custom data augmentation techniques such as random horizontal flipping.
 
-## Setup and Requirements
-### Requirements
-- Python 3.7+
-- PyTorch
-- Torchvision
-- OpenCV
-- Matplotlib
-- Plotly
+## Setup
 
 ### Installation
 1. Clone the repository:
     ```bash
     git clone https://github.com/OtaTran241/VehiclesDetection_FasterRCNN.git
-    cd vehicle-detection
+    cd VehiclesDetection_FasterRCNN
     ```
 
 ## Training
