@@ -12,7 +12,6 @@ This project implements a vehicle detection model using the Faster R-CNN archite
 - [Results](#results)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 The goal of this project is to build a vehicle detection model that can identify vehicles in images. The model is based on the Faster R-CNN architecture and uses a ResNet-50 backbone with Feature Pyramid Networks (FPN). The training and testing pipeline is built using PyTorch.
@@ -52,12 +51,8 @@ The model includes custom data augmentation techniques such as random horizontal
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/vehicle-detection.git
+    git clone https://github.com/OtaTran241/VehiclesDetection_FasterRCNN.git
     cd vehicle-detection
-    ```
-2. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
     ```
 
 ## Training
