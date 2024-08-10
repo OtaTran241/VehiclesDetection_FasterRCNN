@@ -19,8 +19,6 @@ The goal of this project is to build a vehicle detection model that can identify
 ## Dataset
 The dataset used in this project contains images of vehicles with corresponding COCO-style annotations
 
-
-
 - **Train Images**: Images used for training the model.
 - **Test Images**: Images used for evaluating the model.
 - **COCO Annotations**: JSON files containing bounding boxes and class labels.
