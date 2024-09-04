@@ -29,7 +29,7 @@ The dataset used in this project contains images of vehicles with corresponding 
 - **Test Images**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test`
 - **Test Annotations**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test/_annotations.coco.json`
 
-### data augmentation classes 
+### Data augmentation
 RandomHorizontalFlip and ToTensor, which are commonly used in image processing pipelines, particularly for training computer vision models.
 ```python
 class RandomHorizontalFlip(object):
