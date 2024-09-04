@@ -30,7 +30,7 @@ The dataset used in this project contains images of vehicles with corresponding 
 - **Test Annotations**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test/_annotations.coco.json`
 
 ### Data augmentation
-RandomHorizontalFlip and ToTensor, which are commonly used in image processing pipelines, particularly for training computer vision models.
+`RandomHorizontalFlip` and `ToTensor`, which are commonly used in image processing pipelines, particularly for training computer vision models.
 ```python
 class RandomHorizontalFlip(object):
     def __init__(self, p=0.5):
@@ -62,18 +62,18 @@ val_transform = Compose([
 ])
 
 ```
-1. RandomHorizontalFlip:
+1. `RandomHorizontalFlip`:
 - This class applies a random horizontal flip to an image, with a probability determined by p (default is 0.5).  
-- The __call__ method is invoked when an instance of the class is called with an image and its corresponding bounding boxes (bboxes).  
+- The `__call__` method is invoked when an instance of the class is called with an image and its corresponding bounding boxes (bboxes).  
 - If the image is flipped, the bounding boxes are also adjusted to reflect the new positions after flipping. Specifically, the x-coordinates of the bounding boxes are updated.  
   
-2. ToTensor:
+2. `ToTensor`:
 - This class converts an image to a tensor format, which is a common preprocessing step before feeding the image into a neural network.  
 - The bounding boxes are left unchanged.  
 
-3. train_transform and val_transform: 
-- train_transform is a composition of the RandomHorizontalFlip and ToTensor transformations, used for augmenting the training data.  
-- val_transform only applies the ToTensor transformation, typically used for validation data where augmentation like flipping is not desired.  
+3. `train_transform` and `val_transform`: 
+- `train_transform` is a composition of the `RandomHorizontalFlip` and `ToTensor` transformations, used for augmenting the training data.  
+- `val_transform` only applies the `ToTensor` transformation, typically used for validation data where augmentation like flipping is not desired.  
 
 ## Model Architecture
 The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
