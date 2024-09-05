@@ -29,6 +29,52 @@ The dataset used in this project contains images of vehicles with corresponding 
 - **Test Images**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test`
 - **Test Annotations**: `/data/Apply_Grayscale/Apply_Grayscale/Vehicles_Detection.v9i.coco/test/_annotations.coco.json`
 
+### Data augmentation
+`RandomHorizontalFlip` and `ToTensor`, which are commonly used in image processing pipelines, particularly for training computer vision models.
+```python
+class RandomHorizontalFlip(object):
+    def __init__(self, p=0.5):
+        self.p = p
+
+    def __call__(self, image, bboxes):
+        if random.random() < self.p:
+            image = F.hflip(image)
+            width, _ = image.size
+            if len(bboxes) != 0:
+                bboxes = bboxes.clone()
+                bboxes[:, [0, 2]] = width - bboxes[:, [2, 0]]
+        return image, bboxes
+
+
+class ToTensor(object):
+    def __call__(self, image, bboxes):
+        image = F.to_tensor(image)
+        return image, bboxes
+     
+
+train_transform = Compose([
+    RandomHorizontalFlip(p=0.5),
+    ToTensor()
+])
+
+val_transform = Compose([
+    ToTensor()
+])
+
+```
+1. `RandomHorizontalFlip`:
+- This class applies a random horizontal flip to an image, with a probability determined by p (default is 0.5).  
+- The `__call__` method is invoked when an instance of the class is called with an image and its corresponding bounding boxes (bboxes).  
+- If the image is flipped, the bounding boxes are also adjusted to reflect the new positions after flipping. Specifically, the x-coordinates of the bounding boxes are updated.  
+  
+2. `ToTensor`:
+- This class converts an image to a tensor format, which is a common preprocessing step before feeding the image into a neural network.  
+- The bounding boxes are left unchanged.  
+
+3. `train_transform` and `val_transform`: 
+- `train_transform` is a composition of the `RandomHorizontalFlip` and `ToTensor` transformations, used for augmenting the training data.  
+- `val_transform` only applies the `ToTensor` transformation, typically used for validation data where augmentation like flipping is not desired.  
+
 ## Model Architecture
 The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
 - **Backbone**: ResNet-50 with FPN for feature extraction.
