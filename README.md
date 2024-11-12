@@ -1,6 +1,6 @@
 # Vehicle Detection using Faster R-CNN with PyTorch
 
-This project implements a vehicle detection model using the Faster R-CNN architecture with a ResNet-50 backbone. The model is trained to detect and classify vehicles in images, providing bounding boxes around detected vehicles.
+This project implements a vehicle detection model using the Faster R-CNN architecture with a custom ResNet backbone. The model is trained to detect and classify vehicles in images, providing bounding boxes around detected vehicles.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -77,11 +77,9 @@ val_transform = Compose([
 
 ## Model Architecture
 The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
-- **Backbone**: ResNet-50 with FPN for feature extraction.
-- **RPN (Region Proposal Network)**: Proposes candidate object regions.
-- **ROI Heads**: Classifies and refines the proposed regions.
-
-The model includes custom data augmentation techniques such as random horizontal flipping.
+- **Backbone**: A ResNet50 model pretrained on ImageNet, using layers from `conv1` to `layer3`, while excluding `layer4` to reduce complexity and improve training speed.
+- **RPN (Region Proposal Network)**: Uses `AnchorGenerator` to generate anchor boxes with different sizes and aspect ratios.
+- **ROI Heads**: Uses `MultiScaleRoIAlign` to extract features from region proposals.
 
 ## Setup
 
