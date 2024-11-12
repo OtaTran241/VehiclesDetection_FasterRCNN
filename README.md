@@ -3,7 +3,6 @@
 This project implements a vehicle detection model using the Faster R-CNN architecture with a custom ResNet backbone. The model is trained to detect and classify vehicles in images, providing bounding boxes around detected vehicles.
 
 ## Table of Contents
-- [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Model Architecture](#model-architecture)
 - [Setup](#setup)
@@ -12,9 +11,6 @@ This project implements a vehicle detection model using the Faster R-CNN archite
 - [Results](#results)
 - [Usage](#usage)
 - [Contributing](#contributing)
-
-## Project Overview
-The goal of this project is to build a vehicle detection model that can identify vehicles in images. The model is based on the Faster R-CNN architecture and uses a ResNet-50 backbone with Feature Pyramid Networks (FPN). The training and testing pipeline is built using PyTorch.
 
 ## Dataset
 The dataset used in this project contains images of vehicles with corresponding COCO-style annotations
