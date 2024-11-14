@@ -72,7 +72,7 @@ val_transform = Compose([
 - `val_transform` only applies the `ToTensor` transformation, typically used for validation data where augmentation like flipping is not desired.  
 
 ## Model Architecture
-The model architecture is based on Faster R-CNN with a ResNet-50 backbone:
+The model architecture is based on Faster R-CNN with a ResNet backbone:
 - **Backbone**: A ResNet50 model pretrained on ImageNet, using layers from `conv1` to `layer3`, while excluding `layer4` to reduce complexity and improve training speed.
 - **RPN (Region Proposal Network)**: Uses `AnchorGenerator` to generate anchor boxes with different sizes and aspect ratios.
 - **ROI Heads**: Uses `MultiScaleRoIAlign` to extract features from region proposals.
