@@ -1,4 +1,4 @@
-# Vehicle Detection using custom ResNet backbone Faster R-CNN
+# Vehicle Detection using custom backbone Faster R-CNN
 
 This project implements a vehicle detection model using the Faster R-CNN architecture with a custom ResNet backbone. The model is trained to detect and classify vehicles in images, providing bounding boxes around detected vehicles.
 
